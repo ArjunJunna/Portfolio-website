@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async/Await</title>
+    <link rel="stylesheet" href="/FontAwesome/CSS/all.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="container-fluid">
+        <div class="nav-brand">WebDevMe</div>
+        <ul class="list-non-bullet nav-pills">
+          <li class="list-item-inline">
+            <a class="link" href="/index.html">Home</a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="/projects.html">Projects</a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link link-active" href="/blogs.html">Blogs</a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="/designs.html">Designs</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1 class="hero-heading" style="padding: 0">
+        Everything you need to know about Async/Await in JavaScript
+      </h1>
+      <img
+        class="hero-image"
+        src="/Blogs/Blogsimages/asyncawaitjs.jpg"
+        alt="image"
+      />
+      <p class="blogs-para">
+        For the longest of time JavaScript developers had to rely on callbacks
+        for working with asynchronous code. As a result, many of us have
+        experienced callback hell and the horror one goes through when faced
+        with functions looking like this. Thankfully, then (or should we say
+        .then()) came Promises.<br />
+        <br />They offered a much more organized alternative to callbacks and
+        most of the community quickly moved on to using them instead. Now, with
+        the most recent addition of Async/Await, writing JavaScript code is
+        about to get even better!
+      </p>
+      <h2>Strict mode for scripts</h2>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/forscripts.jpg"
+        alt="image"
+      />
+      <h2>What is Async/Await?</h2>
+      <p class="blogs-para">
+        Async/Await is a long anticipated JavaScript feature that makes working
+        with asynchronous functions much more enjoyable and easier to
+        understand. It is build on top of Promises and is compatible with all
+        existing Promise-based APIs. The name comes from async and await - the
+        two keywords that will help us clean up our asynchronous code: Async -
+        declares an asynchronous function (async function someName(){...}).<br /><br />
+        Automatically transforms a regular function into a Promise. When called
+        async functions resolve with whatever is returned in their body. Async
+        functions enable the use of await. Await - pauses the execution of async
+        functions. (var result = await someAsyncCall();). <br />When placed in
+        front of a Promise call, await forces the rest of the code to wait until
+        that Promise finishes and returns a result. Await works only with
+        Promises, it does not work with callbacks. Await can only be used inside
+        async functions. Here is a simple example that will hopefully clear
+        things up:<br /><br />
+        Let's say we want to get some JSON file from our server. We will write a
+        function that uses the axios library and sends a HTTP GET request to
+        https://tutorialzine.com/misc/files/example.json. We have to wait for
+        the server to respond, so naturally this HTTP request will be
+        asynchronous. Below we can see the same function implemented twice.
+        First with Promises, then a second time using Async/Await.
+      </p>
+      <img
+        style="width: 70%"
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/asyncawaitex.jpg"
+        alt="image"
+      />
+      <h3>We can call Async function like this...</h3>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/asynclcall.jpg"
+        alt="image"
+      />
+    </header>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-header">Connect me on social media</div>
+        <ul class="social-links list-non-bullet">
+          <li class="list-item-inline">
+            <a class="link" href="https://github.com/ArjunJunna"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="https://www.instagram.com/webdevme/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li class="list-item-inline">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/arjun-r-a-3362aa147/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="https://twitter.com/Arjun_R_A"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

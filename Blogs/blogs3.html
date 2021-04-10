@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this keyword in functions</title>
+    <link rel="stylesheet" href="/FontAwesome/CSS/all.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="container-fluid">
+        <div class="nav-brand">WebDevMe</div>
+        <ul class="list-non-bullet nav-pills">
+          <li class="list-item-inline">
+            <a class="link" href="/index.html">Home</a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="/projects.html">Projects</a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link link-active" href="/blogs.html">Blogs</a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="/designs.html">Designs</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <h1 class="hero-heading" style="padding: 0">
+        Everything you need to know about this keyword with arrow functions and
+        a regular function.
+      </h1>
+      <img
+        class="hero-image"
+        src="/Blogs/Blogsimages/arrowfnimage.jpg"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Inside a regular function, this keyword refers to the function where it
+        is called. However, this is not associated with arrow functions. Arrow
+        function does not have its own this. So whenever you call this, it
+        refers to its parent scope. For example,
+      </p>
+      <h2>Inside a regular function</h2>
+      <img
+        class="less-size"
+        src="/Blogs/Blogsimages/arrowexample.jpg"
+        alt="image"
+      />
+      <h3>Output</h3>
+      <img
+        class="less-size"
+        src="/Blogs/Blogsimages/arrowoutput.jpg"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Here, this.age inside this.sayName() is accessible because
+        this.sayName() is the method of an object. However, innerFunc() is a
+        normal function and this.age is not accessible because this refers to
+        the global object (Window object in the browser). Hence, this.age inside
+        the innerFunc() function gives undefined.
+      </p>
+      <h2>Inside an arrow function</h2>
+      <img
+        class="less-size"
+        src="/Blogs/Blogsimages/insidearrowfunciton.jpg"
+        alt="image"
+      />
+      <h3>Output</h3>
+      <img
+        class="blogs-pics"
+        style="width: 70%"
+        src="/Blogs/Blogsimages/output.jpg"
+        alt="image"
+      />
+      <p class="less-size">
+        Here, the innerFunc() function is defined using the arrow function. And
+        inside the arrow function, this refers to the parent's scope. Hence,
+        this.age gives 25.
+      </p>
+    </header>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-header">Connect me on social media</div>
+        <ul class="social-links list-non-bullet">
+          <li class="list-item-inline">
+            <a class="link" href="https://github.com/ArjunJunna"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="https://www.instagram.com/webdevme/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li class="list-item-inline">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/arjun-r-a-3362aa147/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+          <li class="list-item-inline">
+            <a class="link" href="https://twitter.com/Arjun_R_A"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
