@@ -16,7 +16,7 @@ body {
   font-size: 1rem;
   background-color: var(--background-color);
   padding: 0;
-  margin: 0;
+  margin: auto;
 }
 hr {
   margin: 2rem 0rem;
@@ -108,9 +108,9 @@ hr {
   padding: 1rem;
   border-radius: 1rem;
   font-weight: bold;
-  height: 13.5rem;
+  height: auto;
   word-break: break-word;
-  margin: 0;
+  margin: auto;
 }
 .section h2 {
   text-align: center;
@@ -168,5 +168,10 @@ ul {
     text-decoration: none;
     padding: 0.2rem 0.2rem;
     margin-top: 0.2rem;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .link {
+    display: block;
   }
 }
