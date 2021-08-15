@@ -1,5 +1,6 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 :root {
   --primary-color: #3077a7;
   --dark-gray: #6b7280;
@@ -69,7 +70,9 @@ hr {
 }
 .navigation .nav-brand {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-family: 'Caveat', cursive;
+  cursor: pointer;
 }
 .navigation .link-active {
   font-weight: bold;
