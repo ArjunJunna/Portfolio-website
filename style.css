@@ -108,7 +108,7 @@ hr {
   padding: 1rem;
   border-radius: 1rem;
   font-weight: bold;
-  height: 11.5rem;
+  height: 13.5rem;
 }
 .section h2 {
   text-align: center;
@@ -121,7 +121,8 @@ ul {
 }
 /**Blogs section**/
 .blogs-pics {
-  width: 90%;
+  width: 70%;
+  height: 10%;
 }
 .less-size {
   width: 70%;

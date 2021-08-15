@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Strict mode</title>
+    <title>Functions in JS</title>
     <link rel="stylesheet" href="/FontAwesome/CSS/all.css" />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <nav class="navigation">
       <div class="container-fluid">
-        <div class="nav-brand">WebDevMe</div>
+        <div class="nav-brand">arjun.codes</div>
         <ul class="list-non-bullet nav-pills">
           <li class="list-item-inline">
             <a class="link" href="/index.html">Home</a>
@@ -22,62 +22,153 @@
           <li class="list-item-inline">
             <a class="link link-active" href="/blogs.html">Blogs</a>
           </li>
-          <li class="list-item-inline">
-            <a class="link" href="/designs.html">Designs</a>
-          </li>
         </ul>
       </div>
     </nav>
 
     <header class="hero">
       <h1 class="hero-heading" style="padding: 0">
-        Everything you need to know about using strict mode in JavaScript
+        How do Functions and Variable Environment work together in JavaScript?👀
       </h1>
       <img
         class="hero-image"
-        src="/Blogs/Blogsimages/strict-mode.jpg"
+        src="/Blogs/Blogsimages/BLOG2/JSFunctions.png"
         alt="image"
       />
+      <h3 class="hero-heading" style="padding: 0">
+        I know that you have worked with functions before too. But do you really
+        know how a function works in JavaScript behind the scenes?
+      </h3>
+      <h3 class="hero-heading" style="padding: 0">
+        How does JavaScript treats its functions and variable environment?
+      </h3>
       <p class="blogs-para">
-        The "use strict" directive was new in ECMAScript version 5. It is not a
-        statement, but a literal expression, ignored by earlier versions of
-        JavaScript. The purpose of "use strict" is to indicate that the code
-        should be executed in "strict mode".<br />
-        With strict mode, you can not, for example, use undeclared variables.You
-        can use strict mode in all your programs. It helps you to write cleaner
-        code, like preventing you from using undeclared variables. "use strict"
-        is just a string, so IE 9 will not throw an error even if it does not
-        understand it.
+        Let's find that out together...</br></br>
+
+Below we have a very small simple program with us. And yes this is gonna blow your mind in just a few minutes into reading.
       </p>
-      <h2>Strict mode for scripts</h2>
       <img
         class="blogs-pics"
-        src="/Blogs/Blogsimages/forscripts.jpg"
+        src="/Blogs/Blogsimages/BLOG2/codeline.png"
         alt="image"
       />
-      <h2>Strict mode for modules</h2>
-      <img
-        class="blogs-pics"
-        src="/Blogs/Blogsimages/formodules.jpg"
-        alt="image"
-      />
-      <h2>Strict mode for functions</h2>
-      <img
-        class="blogs-pics"
-        src="/Blogs/Blogsimages/forfunctions.jpg"
-        alt="image"
-      />
-      <h2>Why strict mode?</h2>
       <p class="blogs-para">
-        Strict mode makes it easier to write "secure" JavaScript. Strict mode
-        changes previously accepted "bad syntax" into real errors. As an
-        example, in normal JavaScript, mistyping a variable name creates a new
-        global variable. In strict mode, this will throw an error, making it
-        impossible to accidentally create a global variable. <br />In normal
-        JavaScript, a developer will not receive any error feedback assigning
-        values to non-writable properties. In strict mode, any assignment to a
-        non-writable property, a getter-only property, a non-existing property,
-        a non-existing variable, or a non-existing object, will throw an error.
+        Please open the developer console and use the keyboard shortcut Ctrl Shift J (on Windows) or Ctrl Option J (on Mac). In the console tab, you will be able to see this once the JavaScript runs the above program.
+      </p>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code1.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Until now everything you have done could be things that you already knew. But the real fun is only starting now.
+      </br></br>
+Let's place a debugger on line 1.
+      </p>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code2.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Over here JavaScript creates a global execution context for the program. It has been pushed into the call stack and the control is in line 1.
+</br></br>
+Oh, wait!!! Don't you know what a Global Execution Context is? Then read on...
+</br></br>
+The global execution context has two components.
+</br></br>
+1 - Variable environment phase also called the memory phase.
+</br></br>
+2- Code execution phase.
+</br></br>
+In the variable environment phase, JavaScript allocates memory to the variables and functions. For the variables, it allocates the keyword 'undefined' and for the functions, it allocates its function body itself as the memory.
+</br></br>
+And in the code execution phase, JavaScript executes the program lines in order.
+</br></br>
+Now that this is cleared. Read on...
+</br></br>
+In our program since the control is in line 1. JavaScript allocated 'undefined' to the variable 'x' and to the function a() it has allocated its function body.
+</br></br>
+Now let's put the debugger to line 2 and click the debugger play button.
+      </p>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code3.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Now that line 1 is executed JavaScript allocated the value 1 to variable x.
+</br></br>
+Now let's put the debugger to line 6 and click the debugger play button.
+      </p>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code4.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Here JavaScript created a new execution context for function a( ). This is been pushed to the call stack. And the control is now given to a(). This doesn't end here. JavaScript also created a new local memory and global memory just for function a( ).
+</br></br>
+As for the memory phase, JavaScript allocated the keyword 'undefined' to the variable present in the local memory of the function a( ).
+</br></br>
+Now let's put the debugger to line 7 and click the debugger play button.
+</br></br>
+JavaScript looks for variable x in local memory and allocates the value '10' to variable x.
+      </p>
+       <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code5.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Now let's put the debugger to line 3 and click the debugger play button.
+      </p>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code6.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        You can notice that in the call stack the execution context for function a( ) just got popped out and now the control is in line 3 back to the global execution context.
+      </br></br>
+If you open the console tab now, you will see the below line there.
+      </p>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code7.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        Now for one last time click the debugger play button.
+      </p>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code8.png"
+        alt="image"
+      />
+      <div class="blogs-para">
+        JavaScript ran the remaining program. It looked for variable x in global memory and allocates the value '1' to variable x. It now completed the global execution context in the call stack. And now the global execution context just got popped out of the stack. The call stack is now empty.
+</br></br>
+Head over to the console tab and you will see the below lines.
+      </div>
+      <img
+        class="blogs-pics"
+        src="/Blogs/Blogsimages/BLOG2/code1.png"
+        alt="image"
+      />
+      <p class="blogs-para">
+        So this is how functions and variable environment work together in JavaScript.
+</br></br>
+Were you not blown away?
+</br></br>
+Haha!!! I know this was just amazing altogether.
+</br></br>
+If you made it this far then congrats you just learned ->
+</br></br>
+- How to use a debugger in the console.</br></br>
+- How JavaScript works with the functions and the variable environment.</br></br>
+- How the call stack works.</br></br>
+- How the function invocation takes place behind the scenes.
       </p>
     </header>
 
@@ -91,7 +182,7 @@
             ></a>
           </li>
           <li class="list-item-inline">
-            <a class="link" href="https://www.instagram.com/webdevme/"
+            <a class="link" href="https://www.instagram.com/arjun.codes/"
               ><i class="fab fa-instagram"></i
             ></a>
           </li>
