@@ -97,6 +97,7 @@ hr {
   max-width: 350px;
   display: block;
   margin: auto;
+  width: 70%;
 }
 .hero .hero-heading {
   color: var(--dark-gray);
