@@ -1,6 +1,7 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 :root {
   --primary-color: #335a69;
   --dark-gray: #6b7280;
@@ -12,10 +13,10 @@ body {
   /* font-family: 'Roboto Mono', sans-serif;*/
   font-family: 'Quicksand', sans-serif;
   width: 100%;
-
+  font-size: 1rem;
   background-color: var(--background-color);
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 hr {
   margin: 2rem 0rem;
@@ -50,7 +51,6 @@ hr {
 .list-non-bullet {
   list-style: none;
   margin: 0rem;
-  padding-bottom: 0.4rem;
 }
 .list-item-inline {
   display: inline;
@@ -109,6 +109,8 @@ hr {
   border-radius: 1rem;
   font-weight: bold;
   height: 13.5rem;
+  word-break: break-word;
+  margin: 0;
 }
 .section h2 {
   text-align: center;
