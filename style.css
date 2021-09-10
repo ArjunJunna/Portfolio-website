@@ -29,6 +29,9 @@ hr {
   max-width: 600px;
   margin: 1rem auto;
 }
+.container-footer {
+  padding: 0rem 1rem;
+}
 /**Links**/
 .link {
   box-sizing: border-box;
